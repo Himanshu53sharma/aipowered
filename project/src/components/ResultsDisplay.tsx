@@ -146,13 +146,18 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({
                 <div>
                   <h4 className="text-lg font-medium text-gray-900 mb-3">Recommendations</h4>
                   <ul className="space-y-2">
-                    {suggestion.recommendations.map((rec, recIndex) => (
-                      <li key={recIndex} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{rec}</span>
-                      </li>
-                    ))}
-                  </ul>
+  {Array.isArray(suggestion.recommendations) && suggestion.recommendations.length > 0 ? (
+    suggestion.recommendations.map((rec, recIndex) => (
+      <li key={recIndex} className="flex items-start">
+        <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+        <span className="text-gray-700">{rec}</span>
+      </li>
+    ))
+  ) : (
+    <li className="text-gray-500 italic">No recommendations provided.</li>
+  )}
+</ul>
+
                 </div>
               </div>
             </div>

@@ -27,13 +27,13 @@ const About: React.FC = () => {
 
   const team = [
     {
-      name: 'Himanshu SHarma',
+      name: 'HIMANSHU SHARMA',
       },
     {
-      name: 'Pratham Singh',
+      name: 'PRATHAM SINGH',
        },
     {
-      name: 'Savant Solanki',
+      name: 'SAVANT SOLANKI',
        }
   ];
 
